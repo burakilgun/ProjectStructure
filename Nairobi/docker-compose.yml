@@ -1,0 +1,9 @@
+version: '3.8'
+
+services: 
+    s_mongo:
+        container_name: c_mongo
+        restart: always
+        image: mongo
+        ports: 
+            - "27017:27017"
