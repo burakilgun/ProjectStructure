@@ -13,7 +13,7 @@ namespace Nairobi.Data
             Products = database.GetCollection<Product>(nameof(Product));
             Categories = database.GetCollection<Category>(nameof(Category));
 
-            MediatRSeed.SeedCategories(Categories);
+            NairobiSeed.SeedCategories(Categories);
         }
 
         public IMongoCollection<Product> Products { get; }

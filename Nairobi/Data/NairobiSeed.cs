@@ -4,7 +4,7 @@ using Nairobi.Entities;
 
 namespace Nairobi.Data
 {
-    public class MediatRSeed
+    public class NairobiSeed
     {
         public static void SeedCategories(IMongoCollection<Category> categories)
         {
