@@ -7,3 +7,4 @@ Nairobi - Project Structure
 * MediatR (CQRS)
 * Fluent Validation
 * AutoMapper
+* Cross Cutting Concerns (AOP)
