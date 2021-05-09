@@ -63,6 +63,20 @@ namespace Nairobi.Controllers
             return BadRequest(response.Errors);
         }
 
+        [HttpPut]
+        [ProducesResponseType(typeof(ProductDto), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<ServiceResult>), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Update(UpdateProductCommand updateProductCommand)
+        {
+            var response = await _mediator.Send(updateProductCommand);
+            if (!response.HasError)
+            {
+                return Ok(response.Data);
+            }
+
+            return BadRequest(response.Errors);
+        }
+
         [HttpDelete("{id}")]
         [ProducesResponseType(typeof(NoContentResult), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(List<ServiceResult>), StatusCodes.Status400BadRequest)]

@@ -31,8 +31,6 @@ namespace Nairobi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IDataContext, DataContext>();
-
             services.AddRepositories();
 
             services.Configure<MongoSettings>(Configuration.GetSection(nameof(MongoSettings)));

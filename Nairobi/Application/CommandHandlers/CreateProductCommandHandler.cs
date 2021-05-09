@@ -28,7 +28,7 @@ namespace Nairobi.Application.CommandHandlers
         public async Task<BaseResponse<ProductDto>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseResponse<ProductDto>();
-            var category = await _categoryRepository.GetById(request.CategoryId);
+            var category = await _categoryRepository.GetByIdAsync(request.CategoryId);
 
             if (category == null)
             {
@@ -42,7 +42,7 @@ namespace Nairobi.Application.CommandHandlers
             product.IsActive = true;
             product.IsDeleted = false;
 
-            await _productRespository.CreateAsync(product);
+            await _productRespository.AddAsync(product);
 
             response.Data = _mapper.Map<ProductDto>(product);
 

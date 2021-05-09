@@ -27,13 +27,9 @@ namespace Nairobi.Application.CommandHandlers
                 return response;
             }
 
-            var deleteStatus = await _productRespository.DeleteAsycn(request.Id);
+            await _productRespository.SafeDeleteAsync(product);
 
-            if (!deleteStatus)
-            {
-                response.AddError("An error occured please try again.", "500");
-                return response;
-            }
+            response.Data = true;
 
             return response;
         }

@@ -1,22 +1,14 @@
-﻿using System.Threading.Tasks;
-using MongoDB.Driver;
+﻿using Nairobi.Data.Repositories.GenericRepository.MongoDb;
 using Nairobi.Data.Repositories.Interfaces;
 using Nairobi.Entities;
+using Nairobi.Settings;
 
 namespace Nairobi.Data.Repositories
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : MongoDbRepositoryBase<Category>, ICategoryRepository
     {
-        private readonly IDataContext _dataContext;
-
-        public CategoryRepository(IDataContext dataContext)
+        public CategoryRepository(IMongoSettings settings) : base(settings)
         {
-            _dataContext = dataContext;
-        }
-
-        public async Task<Category> GetById(string id)
-        {
-            return await _dataContext.Categories.Find(p=> p.Id == id).FirstOrDefaultAsync();
         }
     }
 }

@@ -1,15 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Nairobi.Data.Repositories.GenericRepository;
 using Nairobi.Entities;
 
 namespace Nairobi.Data.Repositories.Interfaces
 {
-    public interface IProductRespository
+    public interface IProductRespository : IRepository<Product,string>
     {
-        Task<List<Product>> GetAllAsync();
-
-        Task<string> CreateAsync(Product product);
-        Task<Product> GetByIdAsync(string id);
-        Task<bool> DeleteAsycn(string id);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Nairobi.Entities
 {
-    public class Category : BaseEntity
+    public class Category : MongoDbEntity
     {
         public string Name { get; set; }
     }
