@@ -2,7 +2,7 @@
 Nairobi - Project Structure 
 
 * .NET 5
-* MongoDB
+* MongoDB (GenericRepository)
 * Docker-compose
 * MediatR (CQRS)
 * Fluent Validation
